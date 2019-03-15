@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="UTF-8">
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="pragma" content="no-cache" />
+
+		<title>IRIS Payment Fraud Prevention Demo</title>
+
+		<script language="javascript">
+
+		var ip = window.location.hostname;
+		/*
+		AMIR: Not required anymore now that we are using setTimeout()
+		var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
+		var is_explorer = navigator.userAgent.indexOf('MSIE') > -1;
+		var is_firefox = navigator.userAgent.indexOf('Firefox') > -1;
+		var is_safari = navigator.userAgent.indexOf("Safari") > -1;
+		var is_opera = navigator.userAgent.toLowerCase().indexOf("op") > -1;
+		if ((is_chrome)&&(is_safari)) { is_safari = false; }
+		if ((is_chrome)&&(is_opera)) { is_chrome = false; }
+
+		var TIMEOUT = 2000;
+		if (is_firefox == true) {
+			TIMEOUT = 0;
+		}
+
+		function sleep() {
+			var currentTime = new Date().getTime();
+			while (currentTime + TIMEOUT >= new Date().getTime()) {
+			}
+		}
+		*/
+
+		function openWindows()
+		{
+			var time=1000;
+			var callNumber=0
+			var timeout = function () { return ++callNumber*time };
+
+			/*
+			A timeout between each opened tab is necessary for Safari.
+			Otherwise, Safari will simply open all windows on a single tab.
+			With the timeout, Safari will first block the popups. Once the user tells
+			safari that it should allow popups, the user should be able to try opening all
+			windows again and all the tabs will be opened, one every second, on a new tab.
+			*/
+			
+			setTimeout("openNLPDomainExplorer()", timeout());
+
+			setTimeout("openNLPDomainArchitect()", timeout());
+			
+			setTimeout("openCallCenterUI()", timeout());
+			
+			setTimeout("openMessageTrace()", timeout());
+			
+			setTimeout("openBusinessRule()", timeout());
+			
+			setTimeout("openBusinessProcess()", timeout());
+
+			setTimeout("openProduction()", timeout());
+
+			setTimeout("openTwitterCredentials()", timeout());
+
+			setTimeout("openTwitterDeveloperAppsPage()", timeout());
+		}
+
+		function window_open(url)
+		{
+			var winReference = window.open();
+			winReference.location = url;
+			winReference.parent.focus();
+		}
+
+		function openProduction()
+		{
+			window_open('EnsPortal.ProductionConfig.zen?$NAMESPACE=APPINT&IRISUserName=SuperUser&IRISPassword=sys');
+		}
+
+		function openBusinessProcess()
+		{
+			window_open('EnsPortal.BPLEditor.zen?NAMESPACE=APPINT&BP=IRISDemo.BP.EvaluateTweet.Process.bpl&IRISUserName=SuperUser&IRISPassword=sys')
+		}
+
+		function openMessageTrace()
+		{
+			window_open('EnsPortal.MessageViewer.zen?$NAMESPACE=APPINT&IRISUserName=SuperUser&IRISPassword=sys')
+		}
+
+		function openCallCenterUI()
+		{
+			window_open('http://' + ip + ':9090/app')
+		}
+
+		function openJBossConsole()
+		{
+			window_open('http://' + ip + ':9091/console/index.html')
+		}
+
+		function openTwitterCredentials()
+		{
+			window_open('EnsPortal.Credentials.zen?$NAMESPACE=APPINT&$NAMESPACE=APPINT&IRISUserName=SuperUser&IRISPassword=sys');
+		}
+
+		function openTwitterDeveloperAppsPage()
+		{
+			window_open('https://developer.twitter.com/en/apps');
+		}
+
+		function openNLPDomainExplorer()
+		{
+			window_open('http://' + ip + ':9094/csp/APP/_iKnow.UI.KnowledgePortal.zen?$NAMESPACE=APP&domain=1&IRISUserName=SuperUser&IRISPassword=sys');
+		}
+
+		function openNLPDomainArchitect()
+		{
+			window_open('http://' + ip + ':9094/csp/app/_iKnow.UI.Architect.zen?$NAMESPACE=APP&DOMAIN=IRISDemo.NLP.Twitter.TwitterAnalytics&IRISUserName=SuperUser&IRISPassword=sys');
+		}
+
+		function openBusinessRule()
+		{
+			window_open('http://' + ip + ':9092/csp/appint/EnsPortal.RuleEditor.zen?RULE=IRISDemo.BR.EvaluateTweet&$NAMESPACE=APPINT&IRISUserName=SuperUser&IRISPassword=sys');
+		}
+
+		function openCallcenterDB()
+		{
+			window_open('http://' + ip + ':9096/csp/sys/exp/%25CSP.UI.Portal.SQL.Home.zen?$NAMESPACE=APP&$NAMESPACE=APP&IRISUserName=SuperUser&IRISPassword=sys')
+		}
+
+		function on_load()
+		{
+			/* Amir: Not required anymore now that we are using setTimeout()
+
+			if (is_safari == true) {
+				btnElem = document.getElementById('BTNALL');
+				btnElem.style.visibility = 'hidden';
+			}
+			*/
+		}
+
+		function openInstructions()
+		{
+			var btn = document.getElementById('instructionsbtn');
+			var instructions = document.getElementById('instructions');
+
+			if (btn.value == 'Show Instructions')
+			{
+				btn.value = 'Hide Instructions';
+				instructions.hidden=false;
+			}
+			else
+			{
+				btn.value = 'Show Instructions';
+				instructions.hidden=true;
+			}
+		}
+
+		</script>
+		<style>
+		.Button {
+			font-family: Arial;
+			font-size: 12px;
+			font-weight: bold;
+			color: #A4BFDB;
+			background-color: #FFFFFF;
+			width: 200px;
+			border-radius: 10px;
+		}
+		.Button:hover {
+			color: #000000;
+			background-color: #FFFFFF;
+		}
+		</style>
+	</head>
+
+	<body onload="javascript:on_load();">
+
+		<!-- Image Map Generated by http://www.image-map.net/ -->
+		<center>
+			<img src="TwitterDemo.png" usemap="#image-map" id="demoimg">
+		</center>
+
+		<map name="image-map">
+		    <area target="" alt="Twitter Connector" title="Twitter Connector" href="javascript:openProduction()" coords="761,328,491,373" shape="rect">
+		    <area target="" alt="Sentiment Analysis Process" title="Sentiment Analysis Process" href="javascript:openBusinessProcess()" coords="756,387,488,432" shape="rect">
+		    <area target="" alt="Message Tracing" title="Message Tracing" href="javascript:openMessageTrace()" coords="758,447,486,492" shape="rect">
+		    <area target="" alt="NLP Domain Architect" title="NLP Domain Architect" href="javascript:openNLPDomainArchitect()" coords="1443,246,1203,291" shape="rect">
+		    <area target="" alt="NLP Domain Explorer" title="NLP Domain Explorer" href="javascript:openNLPDomainExplorer()" coords="1443,303,1204,349" shape="rect">
+		    <area target="" alt="Callcenter UI" title="Callcenter UI" href="javascript:openCallCenterUI()" coords="1938,629,1649,671" shape="rect">
+		    <area target="" alt="JBoss Management Console" title="JBoss Management Console" href="javascript:openJBossConsole()" coords="1938,684,1644,727" shape="rect">
+		    <area target="" alt="Callcenter IRIS DB" title="Callcenter IRIS DB" href="javascript:openCallcenterDB()" coords="1942,774,1531,839" shape="rect">
+		</map>
+		
+		<table width="100%" style="text-align: center; background-color: #b7c8e2;">
+			<tr>
+				<td><input ID="BTNALL" type="button" class="Button" value="Start Demo" onclick="openWindows()"/></td>
+				<td><input type="button" class="Button" value="Twitter Applications Page" onclick="openTwitterDeveloperAppsPage()"/></td>
+				<td><input type="button" class="Button" value="Configure Twitter Credentials" onclick="openTwitterCredentials()"/></td>
+				<td><input type="button" class="Button" value="Show Instructions" onclick="openInstructions()" id="instructionsbtn"/></td>
+			</tr>
+		</table>
+
+
+		<script type="text/javascript" src="imageMapResizer.min.js"></script>
+
+		<script language="javascript">
+			var demoimg = document.getElementById('demoimg');
+
+			demoimg.style.width="90%";
+
+			imageMapResize();
+		</script>
+
+			<div id="instructions" hidden="true">
+			
+			<p>
+			To run this demo you must have a Twitter Developer account and and a twitter application created on twitter. 
+			The application will provide you with your <b>Consumer API Keys</b> and <b>Access token & access token secret</b> credentials.</p>
+			
+			<p>Start the process of getting the developer account WEEKS BEFORE you decide to give this demo. There is no formula to getting a 
+			twitter developer account. They are very strict about giving developer accounts to people. You can try opening one
+			with your personal e-mail account, telling them that you are studying the Twitter API and that you don't have an application in mind right now. 
+			Or you can say that you are a consultant that is studying a 
+			<a href="https://developer.twitter.com/en/docs/developer-utilities/twitter-libraries.html">twitter library</a> and need a developer
+			account to do some tests (I like this better). They will ask you what is the nature of your business or customer. They are very worried about you how
+			you are going to use twitter data. Governamental organizations scare them to death. Try to give them piece of mind. You are just learning a library.</p>
+			
+			<p>Once you have a developer account, create a simple Twitter App using their portal. Click on the <b>Details</b> button of your new 
+			application and click on the <b>Keys and Tokens</b> tab. You will see your <b>Consumer API Keys</b> and <b>Access token & access token secret</b> credentials.</p>
+
+			<p>Now that you have your Twitter credentials, click on <b>Start Demo</b>. Many tabs will be opened for you. If that doesn't happen or
+			just a single tab has been opened, check to see if your browser has blocked your popups.
+			If it has, tell it to allow popups and close any tab that has been opened before trying clickin on the <b>Start Demo</b>
+			button again.</p>
+
+			<p>You will realize that the first screen is actually the Twitter Developer portal. If you are already logged in, you should be 
+			looking at the list of applications on your twitter account. You should navigate to your keys and copy and paste them on the next
+			browser tab. The next browser tab is the list of IRIS Credentials. There are two credentials that you need to configure:</p>
+			<ul>
+				<li><b>TwitterAppConsumerCredentials</b>:
+					<ul>
+						<li><b>User Name</b>: The API Key of your Consumer API keys </li>
+						<li><b>Password</b>: The API Secret Key of your Consumer API keys </li>
+					</ul>
+				</li>
+				<li><b>TwitterAppUserTokenCredentials</b>:
+					<ul>
+						<li><b>User Name</b>: The Access Token of your Access token & access token secret</li>
+						<li><b>Password</b>: The Access Token Secret of your Access token & access token secret</li>
+					</ul>
+
+				</li>
+			</ul>  
+			
+			<p>After configuring your credentials, close the Twitter and the Credentials tab and jump to the production tab and 
+			restart the Twitter Business Service. Leave this tab open.</p>
+			
+			<p><b>Now you are ready to give the demo!</b> Jump to the first tab (the one with this explanation) and use the graph on
+			it to explain what they are going to see on the demo.</p> 
+			
+			<p>We are using IRIS Interoperability to stream tweets using the standard Twitter Streaming API. This API is different from the 
+			Search API because we can receive the tweets in real time. It is also different from the Firehose Streaming API because we are not receiving 
+			all the tweets but a fraction that will depend on the traffic. But for many applications such as sentiment analysis that is just fine.</p>
+			
+			<p>It is important to be prepared to show knowledge about the difference between the Search API, Streaming API and the Firehose API because
+			someone may challenge you. But it is also important to remember that:<p>
+			<ul>
+			 	<li>Receiving a fraction of the tweets in real time is much better than serching for a fraction of yesterday's tweets 
+			 		(Search API takes time to index tweets). If you need realtime reaction (as in the case of
+			sentiment analysis) you can't use Search. You have to do Streaming. </li>
+				<li>This is not a Twitter API demo. This is an NLP demo. We are using Twitter to make it even fun.</li>
+				<li>You are not a Twitter expert. No one is expecting you to be one. So don't try looking like one. This is an IRIS Demo. 
+					We are using cool stuff to demo our product. That's it. We want to show our NLP capabilities as well as our business
+					orchestration, governance and integration capabilities.</li>
+			</ul>
+			
+			<p>On this demo, a ficticious organization that sells electronic devices such as phones wants to be alerted if someone starts
+			saying something bad aboud their products on social media. The reaction must be in real time and the callcenter must reach out
+			to the person in the social media to see if it is possible to help the person and mitigate the damage he/she is doing to the brand.</p>
+			 
+			<p>Every tweet that comes in, triggers a process on the service layer. The first thing this process does is to store the tweet in an
+			IRIS Database that can scale. The second thing is to ask the database for the sentiment score of that tweet. IRIS Database has NLP support and can do 
+			that for us as a service. </p>
+			
+			<p>With the sentiment score, the process applies business rules to decide if we should open a ticket
+			on the callcenter to reach out to that person on the social networks and mitigate any damage they may be doing to our brand. 
+			We don't want to loose our time with users that are not really damaging our brand. So users with few followers or tweets that
+			haven't been retweeted a lot don't really matter. These are business rules that can be configured on IRIS!</p>
+			
+			<p>With all the tweets being stored on the database, our data scientists can continue to refine IRIS NLP performance. Having
+			all past tweets also helps us to do traditional analytics that could cross reference how the market reacted to our product
+			launches, campaigns, etc.</p>
+
+			<p>After following the instructions to copy and paste your credentials from twitter into IRIS, and closing the twitter and credentials tabs,
+			the next tab after the demo landing page is the production tab. You should start telling your story there, and then clik on each tab 
+			and explain what is it accordingly to the followin script:</p>
+
+			<ol>
+				<li>
+					On the production tab, explain what services, processes and operations are.</li>
+					<ul>
+						<li>Click on the green circle of the business service that receives the tweets from Twitter and show that it is configured
+							to filter tweets that contain the hash tag #irisdemo.</li>
+						<li>Call their attention to the dependency on the Business Process.</li>
+						<li>Click on the green circle of the business process. Show them how the other dependencies are shown by IRIS.
+						    Explain that this process is taking the tweet and storing it on the IRIS database on the next layer and asking for the sentiment score.</li>
+						<li>Depending on the sentiment score, number of followers of the user who sent the tweet and how many reteweets, 
+							we will notify the callcenter or not.</li>
+					</ul>
+				</li>
+
+				<li>Now show the Business Process tab. Show them how complex processes can be designed in a low code aproach that is
+					easy to understand and to maintain. Synchronous and Asynchronous activities, calling business rules, data transformations, 
+					initiating human workflows, sending alerts, all can be easily designed here.</li>
+				<li>Show that the process is calling a business rule to decide if this is worthy of the attention of our call center or not.</li>
+				<li>Jump to the Business Rule tab and show them the rules.</li>
+				
+				<li>Jump to the message trace tab. Tell them that here is
+					where they can query our audit logs. Click on the last message just to leave it checked.</li>
+					
+				<li>Now use your phone to tweet something like: "My phone says the weather will be dreadful today. #irisdemo". It must contain the hash tag #irisdemo!</li>
+
+				<li>Click on the Search button of the message trace screen. Show them that a new tweet just came in. It is your tweet! In real time!</li>
+				
+				<li>Show how much data this tweet brings! Everything about you, number of followers, retweets, etc. Remember them that we are using
+					all of this to make a decision, but we are throwing sentiment in there too!</li>
+				
+				<li>Show them the visual trace. This is one of the most important screens! Explore this trace with them. Governance.
+					Auditing. Evidence for solving conflictive problems. It may not be so important in the context of NLP, but when integrating
+					critical systems on an organization, that is the tool you want to have always available for you. Tell them that they can choose 
+					to store as many months or years of message as they need. Tell them that we have a message bank component
+					that allows them to keep their production systems small (and stateless) while keeping with all the messages
+					on a message bank that is searchable and allow you to resend messages if necessary. Focus on the concepts that
+					you think are important for this customer.</li>
+
+				<li>Show that the process evaluated the sentiment of your tweet as NEGATIVE. The fact that the word "phone" was mentioned made it 
+				very negative. If you send a different tweet such as "The weather today will be dreadful. #irisdemo", you will notice that the score
+				will be a lot smaller. That is because we are not mentioning the word "phone" that is a business concept for us!</li>
+				
+				<li>Jump to the next tab and explain to them the Domain Architect. Show them where you can configure a Matching dictionary
+				with business concepts and its synonyms.</li>
+				
+				<li>Click on the "Domain Settings" and show all the languages our NLP support.</li>
+				
+				<li>Click on "TableTwitter" under "Data Locations" and show them how we told our NLP engine where to find the data.</li>
+				<li>Explain other concepts as you please accordingly to your audience. Always try to limit the explanation accordingly to the time you have 
+				 	and the audience.</li>
+				 	
+				<li>Jump to the next tab and show the Domain Explorer and refresh it. Show how the sentences on your tweet were highlighted. If you send another tweet such 
+				as "This is not such a bad phone after all. #irisdemo" you can show how the negation support on our NLP engine prevents us from giving this
+				sentence a negative score.</li>
+				
+				<li>Now jump to the call center tab and refresh it. You should see a ticket there for your first tweet. Explain that this is just a legacy
+					application that we are integrating with through SOAP. This is an application built on JBoss and Primefaces (it is using IRIS as a database with Hybernate).</li>
+				<li>Go back to the first screen (the demo landing page). And finish there, reviewing with them what they just saw.</li>
+				
+				<li>You can send another tweet with a negation such as "This is not such a bad weather! #irisdemo" and show how our negation score prevented us from interpreting
+				this as a negative sentiment.</li> 
+			</ol>
+		</div>
+
+
+	</body>
+</html>

@@ -1,0 +1,6 @@
+# IRIS licenses
+**/license.key
+**/iris.key
+
+# Mac specific files
+**/.DS_Store
