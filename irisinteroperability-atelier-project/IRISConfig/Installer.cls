@@ -32,7 +32,7 @@ ClassMethod CreateCredentials(pNamespace As %String) As %Status
 		Set tNS=$Namespace
 		ZN pNamespace
 		
-		Set tSC = ##class(Ens.Config.Credentials).SetCredential("AWSCredential", "***", "***", 1)
+		Set tSC = ##class(Ens.Config.Credentials).SetCredential("AWSAccessKeyCredential", "***", "***", 1)
 		Quit:$System.Status.IsError(tSC)		
 	}
 	Catch (oException)
