@@ -46,6 +46,9 @@
 		//If %request.Get("LastName")="" Do %request.Set("LastName","Last name")
 		If %request.Get("AppointmentDate")="" 
 		{
+			set now =  $REPLACE($ZDATETIME($H, 3,2)," ","T")
+			Do %request.Set("AppointmentDate", now)
+			
 			Set tSC = hl7.SetValueAt("Appointment Date", "SCH:11(1).4.1")
 			Quit:$$$ISERR(tSC)
 		}
@@ -66,7 +69,6 @@
 			Quit:$$$ISERR(tSC)
 		}
 		
-		//Set tSC = $System.Status.Error(5001, "Test")
 	}
 	Catch (oException)
 	{
@@ -134,6 +136,7 @@
 		<csp:if condition='%request.IsDefined("ErrorMsg")'>
 			<div class="row">
 				<font color="red">#(%request.Get("ErrorMsg"))#</font>
+				<font color="red">#(now)#</font>
 			</div>
 		</csp:if>
 		  <div class="row">
