@@ -9,9 +9,9 @@ Parameter URI As %String = "/";
 
 Parameter Service As %String = "sns";
 
-Property PhoneNumber As %String;
+Property PhoneNumber As %String [ Required ];
 
-Property Message As %String;
+Property Message As %String [ Required ];
 
 Method %OnNew(pAccessKey As AWS.AWS4Auth.AccessKey = "", pSignatureMethod As %String = "") As %Status
 {

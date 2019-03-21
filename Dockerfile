@@ -14,6 +14,9 @@ RUN mkdir /EMRHL7Feed
 RUN mkdir /EMRHL7Feed/FileIn
 RUN mkdir /EMRHL7Feed/FileOut
 
+RUN chown root:irisusr -R /EMRHL7Feed/
+RUN chmod g+w -R /EMRHL7Feed/
+
 ADD ./html/LandingPage.png $ISC_PACKAGE_INSTALLDIR/csp/appint/
 ADD ./html/image-map-resizer/js/imageMapResizer.min.js $ISC_PACKAGE_INSTALLDIR/csp/appint/
 ADD ./html/image-map-resizer/js/imageMapResizer.map $ISC_PACKAGE_INSTALLDIR/csp/appint/

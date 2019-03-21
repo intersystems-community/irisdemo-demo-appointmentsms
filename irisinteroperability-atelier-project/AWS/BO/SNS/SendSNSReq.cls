@@ -1,11 +1,10 @@
 Class AWS.BO.SNS.SendSNSReq Extends (%Persistent,Ens.Request)
 {
 
-/// Should the phone number be a string?
-Property PhoneNumber As %String;
+Property PhoneNumber As %String [ Required ];
 
 /// TODO: How long can a message be?? Is 50 ok?
-Property Message As %String(MAXLEN=50) ;
+Property Message As %String(MAXLEN=140)[ Required ];
 
 Storage Default
 {
