@@ -136,7 +136,6 @@
 		<csp:if condition='%request.IsDefined("ErrorMsg")'>
 			<div class="row">
 				<font color="red">#(%request.Get("ErrorMsg"))#</font>
-				<font color="red">#(now)#</font>
 			</div>
 		</csp:if>
 		  <div class="row">
