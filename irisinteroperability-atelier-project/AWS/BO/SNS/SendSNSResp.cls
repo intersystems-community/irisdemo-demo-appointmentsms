@@ -1,6 +1,8 @@
-Class AWS.BO.SNS.SendSNSResp Extends (%Persistent,Ens.Response)
+Class AWS.BO.SNS.SendSNSResp Extends (%Persistent, Ens.Response)
 {
-	Property PublishResultMessageId As %String;
+
+Property PublishResultMessageId As %String;
+
 Storage Default
 {
 <Data name="SendSNSRespDefaultData">

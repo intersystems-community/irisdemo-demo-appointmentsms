@@ -1,8 +1,9 @@
-Class AWS.BO.SNS.Operation extends Ens.BusinessOperation {
+Class AWS.BO.SNS.Operation Extends Ens.BusinessOperation
+{
 
 Parameter ADAPTER = "AWS.Adapter.OutboundAdapter";
 
-Property Adapter As AWS.Adapter.OutboundAdapter; 
+Property Adapter As AWS.Adapter.OutboundAdapter;
 
 Parameter INVOCATION = "Queue";
 
@@ -26,10 +27,11 @@ Method SendSNS(pInput As AWS.BO.SNS.SendSNSReq, Output pOutput As AWS.BO.SNS.Sen
 		Set tSC = oException.AsStatus()
 	}
 	
-	Quit tSC 
+	Quit tSC
 }
 
-XData MessageMap {
+XData MessageMap
+{
 <MapItems>
     <MapItem MessageType="AWS.BO.SNS.SendSNSReq">
         <Method>SendSNS</Method>
