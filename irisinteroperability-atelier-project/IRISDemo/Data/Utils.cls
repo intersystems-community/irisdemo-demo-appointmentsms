@@ -21,6 +21,10 @@ Class IRISDemo.Data.Utils
 			Quit:$$$ISERR(tSC)
 			
 			Set tSC = $System.DeepSee.BuildCube("Appointment", 0, 1)
+			Quit:$$$ISERR(tSC)
+			
+			set tSC = ##class(%DeepSee.CubeManager.Utils).SetActiveRegistry("IRISDemo.Cube.Registry")
+			Quit:$$$ISERR(tSC)
 		}
 		Catch (oException)
 		{

@@ -11,7 +11,7 @@ XData Registry [ XMLNamespace = "http://www.intersystems.com/deepsee" ]
   <Groups>
     <RegistryMapGroup GroupName="Group 1" IsRegistered="true" IsValid="true" Disabled="false" BuildAsynch="true">
       <Cubes>
-        <RegistryMapCube CubeKey="Appointment" CubeDisplayName="Appointment" Disabled="false" DSTimeEnabled="true" BuildAsynch="true">
+        <RegistryMapCube CubeKey="APPOINTMENT" CubeDisplayName="Appointment" Disabled="false" DSTimeEnabled="true" BuildAsynch="true">
           <NaturalGroup>1</NaturalGroup>
           <CustomBuildOrder>1</CustomBuildOrder>
           <NaturalBuildOrder>1</NaturalBuildOrder>
