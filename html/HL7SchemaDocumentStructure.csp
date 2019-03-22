@@ -1,5 +1,5 @@
 <csp:method name="OnPreHTTP" returntype="%Boolean">
-
+	
 	Set %response.ServerSideRedirect=##class(%CSP.Page).Link("EnsPortal.HL7.SchemaDocumentStructure.zen?MS="_%request.Get("MS"))
 	
 	Quit $$$OK

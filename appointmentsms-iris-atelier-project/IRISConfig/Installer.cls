@@ -3,6 +3,25 @@ Include %occInclude
 Class IRISConfig.Installer Extends IRISConfig.InstallerBase
 {
 
+ClassMethod LoadCSPPageToFixEMRSimulatorLink(pNamespace As %String) As %Status
+{
+	Set tSC = $$$OK
+	Try
+	{
+		ZN pNamespace
+		
+		Set tSC = $System.CSP.LoadPage("/csp/user/HL7/HL7SchemaDocumentStructure.csp")
+	}
+	Catch (oException)
+	{
+		Set tSC = oException.AsStatus()
+	}
+	
+	ZN "%SYS"
+	
+	Quit tSC 
+}
+
 ClassMethod LoadTransactionalData(pNamespace As %String) As %Status
 {
 	Set tSC = $$$OK
@@ -64,6 +83,11 @@ XData Install [ XMLNamespace = INSTALLER ]
 	
 	<Log Text="Loading transactional data..." Level="0"/>
 	<Invoke Class="IRISConfig.Installer" Method="LoadTransactionalData" CheckStatus="true">
+		<Arg name="pNamespace" Value="${Namespace}"/>
+	</Invoke>
+
+	<Log Text="Loading CSP page we use to fix link on HL7 Output on the EMR Simulator..." Level="0"/>
+	<Invoke Class="IRISConfig.Installer" Method="LoadCSPPageToFixEMRSimulatorLink" CheckStatus="true">
 		<Arg name="pNamespace" Value="${Namespace}"/>
 	</Invoke>
 	
