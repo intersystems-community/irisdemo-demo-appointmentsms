@@ -17,6 +17,8 @@ Class IRISDemo.Production Extends IRISDemo.BaseProduction
 	  </Item>
 	  <Item Name="AWS SNS Operation" Category="" ClassName="AWS.BO.SNS.Operation" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="false" Schedule="">
 	  </Item>
+	  <Item Name="EMR HL7 Appointment Store Operation" Category="" ClassName="IRISDemo.BO.Appointment.Operation" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="false" Schedule="">
+	  </Item>
 	</Production>
 	}
 	

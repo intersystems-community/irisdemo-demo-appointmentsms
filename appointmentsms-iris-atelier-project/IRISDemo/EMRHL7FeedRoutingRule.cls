@@ -14,6 +14,7 @@ XData RuleDefinition [ XMLNamespace = "http://www.intersystems.com/rule" ]
 <constraint name="docName" value="SIU_S12"></constraint>
 <when condition="1">
 <send transform="IRISDemo.DTL.HL7ToSMSTransformer" target="AWS SNS Operation"></send>
+<send transform="" target="EMR HL7 Appointment Store Operation"></send>
 </when>
 </rule>
 </ruleSet>
