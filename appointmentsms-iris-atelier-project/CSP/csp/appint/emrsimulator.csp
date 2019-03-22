@@ -4,7 +4,7 @@
 	Set tSC = $$$OK
 	Try
 	{
-		Set hl7=##class(EnsLib.HL7.Message).ImportFromFile("/EMRHL7Feed/test_message.txt")
+		Set hl7=##class(EnsLib.HL7.Message).ImportFromFile("/EMRHL7Feed/template_hl7_message.txt")
 		Set hl7.DocType="2.5:SIU_S12"
 		
 		//If %request.Get("LastName")="" Do %request.Set("LastName","Last name")
@@ -31,7 +31,6 @@
 			Quit:$$$ISERR(tSC)
 		}
 		
-		//If %request.Get("LastName")="" Do %request.Set("LastName","Last name")
 		If %request.Get("PhoneNumber")="" 
 		{
 			Set tSC = hl7.SetValueAt("Phone Number", "PIDgrp(1).PID:13(1).1")
@@ -43,7 +42,6 @@
 			Quit:$$$ISERR(tSC)
 		}
 		
-		//If %request.Get("LastName")="" Do %request.Set("LastName","Last name")
 		If %request.Get("AppointmentDate")="" 
 		{
 			set now =  $REPLACE($ZDATETIME($H, 3,2)," ","T")

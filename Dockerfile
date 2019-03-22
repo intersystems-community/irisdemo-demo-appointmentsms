@@ -1,4 +1,4 @@
-FROM intersystemsdc/irisdemo-base-irishealthint-community:stable
+FROM intersystemsdc/irisdemo-base-irishealthint-community:2019.1.0-released-community
 LABEL maintainer="Amir Samary <amir.samary@intersystems.com>"
 
 # Name of the project folder ex.: my-atelier-project
@@ -17,8 +17,8 @@ RUN mkdir /EMRHL7Feed/FileOut
 RUN chown root:irisusr -R /EMRHL7Feed/
 RUN chmod g+w -R /EMRHL7Feed/
 
-ADD ./html/LandingPage.png $ISC_PACKAGE_INSTALLDIR/csp/appint/
-ADD ./html/image-map-resizer/js/imageMapResizer.min.js $ISC_PACKAGE_INSTALLDIR/csp/appint/
-ADD ./html/image-map-resizer/js/imageMapResizer.map $ISC_PACKAGE_INSTALLDIR/csp/appint/
-ADD ./iris.key /usr/irissys/mgr/
-ADD ./test_message.txt /EMRHL7Feed
+ADD ./html/LandingPage.png $ISC_PACKAGE_INSTALLDIR/csp/user/
+ADD ./html/image-map-resizer/js/imageMapResizer.min.js $ISC_PACKAGE_INSTALLDIR/csp/user/
+ADD ./html/image-map-resizer/js/imageMapResizer.map $ISC_PACKAGE_INSTALLDIR/csp/user/
+
+ADD ./template_hl7_message.txt /EMRHL7Feed
