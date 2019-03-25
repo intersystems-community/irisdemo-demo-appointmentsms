@@ -19,12 +19,11 @@ Class IRISDemo.Data.Utils
 			
 			Set tSC = ..FixApptDates()
 			Quit:$$$ISERR(tSC)
-			
-			Set tSC = $System.DeepSee.BuildCube("Appointment", 0, 1)
-			Quit:$$$ISERR(tSC)
-			
+						
 			set tSC = ##class(%DeepSee.CubeManager.Utils).SetActiveRegistry("IRISDemo.Cube.Registry")
 			Quit:$$$ISERR(tSC)
+			
+			set tSC = ##class(%DeepSee.CubeManager.Utils).BuildAllRegisteredGroups()
 		}
 		Catch (oException)
 		{
