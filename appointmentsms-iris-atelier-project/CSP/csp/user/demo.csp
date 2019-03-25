@@ -31,11 +31,11 @@
 			
 			setTimeout("openCubeArchitect()", timeout());
 			
-			setTimeout("openSQLExplorer()", timeout());
-			
 			setTimeout("openMessageTrace()", timeout());
 			
 			setTimeout("openDTL()", timeout());
+			
+			setTimeout("openSQLExplorer()", timeout());
 			
 			setTimeout("openBusinessRule()", timeout());
 			
