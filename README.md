@@ -25,7 +25,7 @@ Now that you have watched the demo. You can do two different things:
 To just run the demo on your PC, make sure you have docker installed on your machine and run the following command:
 
 ```bash
-docker run -it --rm -p 52773:52773 --name iris intersystemsdc/irisdemo-demo-appointmentsms:*stable*
+docker run -it --rm -p 52773:52773 --name iris intersystemsdc/irisdemo-demo-appointmentsms:stable
 ```
 
 Then open the demo landing page on http://localhost:52773/csp/user/demo.csp.
@@ -33,7 +33,7 @@ Then open the demo landing page on http://localhost:52773/csp/user/demo.csp.
 If you want to experience on building parts of the demo, start this other container:
 
 ```bash
-docker run -it --rm -p 52773:52773 --name iris intersystemsdc/irisdemo-demo-appointmentsms:*student*
+docker run -it --rm -p 52773:52773 --name iris intersystemsdc/irisdemo-demo-appointmentsms:student
 ```
 
 Follow [this video](http://www.youtube.com/) for guidance on both paths.
