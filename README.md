@@ -14,7 +14,15 @@ Have fun! :)
 
 ## Just watch it
 
-To just run the demo, make sure you have docker installed on your machine and run the following command:
+Watch [this video](http://www.youtube.com/) on YouTube to see the demo.
+
+## Build it yourself!
+
+Now that you have watched the demo. You can do two different things:
+- You can run the demo on your onw PC
+- You can experience building parts of the demo yourself!
+
+To just run the demo on your PC, make sure you have docker installed on your machine and run the following command:
 
 ```bash
 docker run -it --rm -p 52773:52773 --name iris intersystemsdc/irisdemo-demo-appointmentsms:stable
@@ -22,14 +30,12 @@ docker run -it --rm -p 52773:52773 --name iris intersystemsdc/irisdemo-demo-appo
 
 Then open the demo landing page on http://localhost:52773/csp/user/demo.csp.
 
-Watch [this video](http://www.youtube.com/) on YouTube to see how to navigate the demo.
-
-## Build it yourself!
-
 If you want to experience on building parts of the demo, start this other container:
 
 ```bash
 docker run -it --rm -p 52773:52773 --name iris intersystemsdc/irisdemo-demo-appointmentsms:student
 ```
 
-[This video](http://www.youtube.com/) will guide you.
+Follow [this video](http://www.youtube.com/) for guidance on both paths.
+
+Enjoy!
