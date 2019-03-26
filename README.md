@@ -4,6 +4,10 @@ This demo shows how easy it is to integrate an Electronic Medical Record system 
 - Send a SMS to notify the patient of the appointment
 - Store the data on a table and give you a realtime Dashboard about your business
 
+The picture bellow shows the workflow:
+
+![Demo Landing Page](README.png)
+
 You will find two YouTube videos bellow. The first one will spend 5min showing you the demo. But if you really and to experience building an integration with IRIS, you should watch the first and then the second.
 
 Have fun! :)
