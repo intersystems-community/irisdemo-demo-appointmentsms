@@ -58,17 +58,17 @@
 
 		function openProduction()
 		{
-			window_open('EnsPortal.ProductionConfig.zen?$NAMESPACE=USER&IRISUserName=SuperUser&IRISPassword=sys');
+			window_open('EnsPortal.ProductionConfig.zen?$NAMESPACE=USER&IRISUserName=SuperUser&IRISPassword=SYS');
 		}
 
 		/*function openBusinessProcess()
 		{
-			window_open('EnsPortal.BPLEditor.zen?NAMESPACE=USER&BP=IRISDemo.BP.EvaluateTweet.Process.bpl&IRISUserName=SuperUser&IRISPassword=sys')
+			window_open('EnsPortal.BPLEditor.zen?NAMESPACE=USER&BP=IRISDemo.BP.EvaluateTweet.Process.bpl&IRISUserName=SuperUser&IRISPassword=SYS')
 		}*/
 
 		function openMessageTrace()
 		{
-			window_open('EnsPortal.MessageViewer.zen?$NAMESPACE=USER&IRISUserName=SuperUser&IRISPassword=sys')
+			window_open('EnsPortal.MessageViewer.zen?$NAMESPACE=USER&IRISUserName=SuperUser&IRISPassword=SYS')
 		}
 
 		function openEMRUI()
@@ -78,12 +78,12 @@
 		
 		function openSQLExplorer()
 		{
-			window_open('http://' + ip + ':52773/csp/sys/exp/%25CSP.UI.Portal.SQL.Home.zen?$NAMESPACE=USER&$NAMESPACE=USER&IRISUserName=SuperUser&IRISPassword=sys')
+			window_open('http://' + ip + ':52773/csp/sys/exp/%25CSP.UI.Portal.SQL.Home.zen?$NAMESPACE=USER&$NAMESPACE=USER&IRISUserName=SuperUser&IRISPassword=SYS')
 		}
 
 		function openAWSCredentials()
 		{
-			window_open('EnsPortal.Credentials.zen?$NAMESPACE=USER&$NAMESPACE=APPINT&IRISUserName=SuperUser&IRISPassword=sys');
+			window_open('EnsPortal.Credentials.zen?$NAMESPACE=USER&$NAMESPACE=APPINT&IRISUserName=SuperUser&IRISPassword=SYS');
 		}
 
 		function openAWSDeveloperAppsPage()
@@ -93,27 +93,27 @@
 
 		function openBusinessRule()
 		{
-			window_open('http://' + ip + ':52773/csp/user/EnsPortal.RuleEditor.zen?RULE=IRISDemo.EMRHL7FeedRoutingRule&$NAMESPACE=USER&IRISUserName=SuperUser&IRISPassword=sys');
+			window_open('http://' + ip + ':52773/csp/user/EnsPortal.RuleEditor.zen?RULE=IRISDemo.EMRHL7FeedRoutingRule&$NAMESPACE=USER&IRISUserName=SuperUser&IRISPassword=SYS');
 		}
 		
 		function openCubeArchitect()
 		{
-			window_open('http://' + ip + ':52773/csp/user/_DeepSee.UI.Architect.zen?$NAMESPACE=USER&CUBE=Appointment.cube&IRISUserName=SuperUser&IRISPassword=sys');
+			window_open('http://' + ip + ':52773/csp/user/_DeepSee.UI.Architect.zen?$NAMESPACE=USER&CUBE=Appointment.cube&IRISUserName=SuperUser&IRISPassword=SYS');
 		}
 		
 		function openCubeAnalyzer()
 		{
-			window_open('http://' + ip + ':52773/csp/user/_DeepSee.UI.Analyzer.zen?$NAMESPACE=USER&IRISUserName=SuperUser&IRISPassword=sys');
+			window_open('http://' + ip + ':52773/csp/user/_DeepSee.UI.Analyzer.zen?$NAMESPACE=USER&IRISUserName=SuperUser&IRISPassword=SYS');
 		}
 		
 		function openDashboard()
 		{
-			window_open('http://' + ip + ':52773/csp/user/_DeepSee.UserPortal.DashboardViewer.zen?DASHBOARD=Dashboards/Appointments.dashboard&IRISUserName=SuperUser&IRISPassword=sys');
+			window_open('http://' + ip + ':52773/csp/user/_DeepSee.UserPortal.DashboardViewer.zen?DASHBOARD=Dashboards/Appointments.dashboard&IRISUserName=SuperUser&IRISPassword=SYS');
 		}
 		
 		function openDTL()
 		{
-			window_open('http://' + ip + ':52773/csp/user/EnsPortal.DTLEditor.zen?DT=IRISDemo.DTL.HL7ToSMSTransformer.dtl&IRISUserName=SuperUser&IRISPassword=sys');
+			window_open('http://' + ip + ':52773/csp/user/EnsPortal.DTLEditor.zen?DT=IRISDemo.DTL.HL7ToSMSTransformer.dtl&IRISUserName=SuperUser&IRISPassword=SYS');
 		
 		}
 
