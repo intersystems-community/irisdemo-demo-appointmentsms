@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<script language="cache" runat="server">
+	Set tSC = $$$OK
+	Try
+	{
+		Set hl7=##class(EnsLib.HL7.Message).ImportFromFile("/EMRHL7Feed/template_hl7_message.txt")
+		Set hl7.DocType="2.5:SIU_S12"
+		
+		//If %request.Get("LastName")="" Do %request.Set("LastName","Last name")
+		If %request.Get("FirstName")="" 
+		{
+			Set tSC = hl7.SetValueAt("First Name", "PIDgrp(1).PID:5(1).2")
+			Quit:$$$ISERR(tSC)
+		}
+		Else
+		{
+			Set tSC = hl7.SetValueAt(%request.Get("FirstName"), "PIDgrp(1).PID:5(1).2")
+			Quit:$$$ISERR(tSC)
+		}
+		
+		//If %request.Get("LastName")="" Do %request.Set("LastName","Last name")
+		If %request.Get("LastName")="" 
+		{
+			Set tSC = hl7.SetValueAt("Last Name", "PIDgrp(1).PID:5(1).1.1")
+			Quit:$$$ISERR(tSC)
+		}
+		Else
+		{
+			Set tSC = hl7.SetValueAt(%request.Get("LastName"), "PIDgrp(1).PID:5(1).1.1")
+			Quit:$$$ISERR(tSC)
+		}
+		
+		If %request.Get("PhoneNumber")="" 
+		{
+			Set tSC = hl7.SetValueAt("Phone Number", "PIDgrp(1).PID:13(1).1")
+			Quit:$$$ISERR(tSC)
+		}
+		Else
+		{
+			Set tSC = hl7.SetValueAt(%request.Get("PhoneNumber"), "PIDgrp(1).PID:13(1).1")
+			Quit:$$$ISERR(tSC)
+		}
+		
+		If %request.Get("AppointmentDate")="" 
+		{
+			set now =  $REPLACE($ZDATETIME($H, 3,2)," ","T")
+			Do %request.Set("AppointmentDate", now)
+			
+			Set tSC = hl7.SetValueAt("Appointment Date", "SCH:11(1).4.1")
+			Quit:$$$ISERR(tSC)
+		}
+		Else
+		{
+			Set date = $ZDATETIME($ZDATETIMEH(%request.Get("AppointmentDate"), 3,2), 8)
+			Set formattedDate = $ZSTRIP(date,"*W",":")
+			Do %request.Set("FormattedDate", formattedDate)
+			 
+			Set tSC = hl7.SetValueAt(%request.Get("FormattedDate"), "SCH:11(1).4.1")
+
+			Quit:$$$ISERR(tSC)
+		}
+		
+		If %request.IsDefined("ProcessMsg")
+		{
+			Set tSC = hl7.OutputToFile("/EMRHL7Feed/FileIn/HL7Message.txt", 1)
+			Quit:$$$ISERR(tSC)
+		}
+		
+	}
+	Catch (oException)
+	{
+		Set tSC = oException.AsStatus()
+	}
+	
+	If $$$ISERR(tSC)
+	{
+		Do %request.Set("ErrorMsg", $System.Status.GetErrorText(tSC))
+	}
+</script>
+					
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<title>IRIS Appointment SMS Demo</title>
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+		<style>
+			.demo-wrapper {height: 100vh; background-color: #F5FCFE;}
+			.demo-content-container {height: 100%}
+			.demo-form-row {color: white; min-height: 40%}
+			.demo-form-wrapper {background-color: #6CB6CF}
+			.form-btn-wrapper { margin-top: 25px}
+			.HL7-wrapper {min-height: 40%; max-width: 100%; overflow-x: scroll;}
+		</style>
+	</head>
+		
+	<body class="demo-wrapper">
+		<div class="container align-items-center demo-content-container">
+		  <div class="row demo-form-row align-items-center demo-form-wrapper">
+		    <div class="col">
+		    	<h2 class="text-center">Update HL7 Message</h2>
+		     	<form method="post">
+				  <div class="row">
+				    <div class="col">
+				      <input type="text" class="form-control" placeholder="First Name" name="FirstName" value='#(%request.Get("FirstName"))#'>
+				    </div>
+				    <div class="col">
+				      <input type="text" class="form-control" placeholder="Last Name" name="LastName"  value='#(%request.Get("LastName"))#'>
+				    </div>
+				    <div class="col">
+				      <input type="text" class="form-control" placeholder="Phone Number" name="PhoneNumber" value='#(%request.Get("PhoneNumber"))#'>
+				    </div>
+			    	<div class="col">
+			    		<input class="form-control" type="datetime-local" value="" name="AppointmentDate" value='#(%request.Get("AppointmentDate"))#'>
+				    </div>
+				  </div>
+					<div class="form-btn-wrapper">
+						<button type="submit" class="btn btn-primary">Update HL7 Message</button>
+						<button type="submit" class="btn btn-success" name="ProcessMsg" value="Send HL7 Message">Send HL7 Message</button>
+					</div>
+				</form>
+		    </div>
+		  </div>
+		<csp:if condition='%request.IsDefined("ErrorMsg")'>
+			<div class="row">
+				<font color="red">#(%request.Get("ErrorMsg"))#</font>
+			</div>
+		</csp:if>
+		  <div class="row">
+		    <div class="col">
+		    	<h3 class="text-center">Your Current HL7 Message</h1>
+		    </div>
+		  </div>
+		  <div class="row HL7-wrapper align-items-center">
+		    <p>
+	      		<server>
+					Set tSC = hl7.OutputHTML()
+				</server>
+			</p>
+		  </div>
+			<script language="JavaScript">
+				var elements = $(".EDISegmentsTableValue a")
+				
+				elements.each(function(index, element) {
+				  var section = element.title.split(" / ")[0]
+				  
+				  if(section  === "5(1).1.1" || section  === "5(1).2" || section  === "11(1).4.1" || section  === "13(1).1"){
+				  	$(element).css( "background-color", "#2691B4" );
+				  	$(element).css( "color", "black" );
+				  }
+				});
+			</script>
+		</div>
+	</body>
+</html>
