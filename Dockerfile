@@ -7,15 +7,13 @@ ARG IRIS_PROJECT_FOLDER_NAME
 # Adding source code that will be loaded by the installer
 ADD ./${IRIS_PROJECT_FOLDER_NAME}/ $IRIS_APP_SOURCEDIR
 
-RUN mkdir /EMRHL7Feed
-RUN mkdir /EMRHL7Feed/FileIn
-RUN mkdir /EMRHL7Feed/FileOut
-
-RUN chown root:irisusr -R /EMRHL7Feed/
-RUN chmod g+w -R /EMRHL7Feed/
+RUN mkdir /EMRHL7Feed && \
+    mkdir /EMRHL7Feed/FileIn && \
+    mkdir /EMRHL7Feed/FileOut && \
+    chown root:irisusr -R /EMRHL7Feed/ && \
+    chmod g+w -R /EMRHL7Feed/
 
 ADD ./html/HL7SchemaDocumentStructure.csp $ISC_PACKAGE_INSTALLDIR/csp/user/HL7/HL7SchemaDocumentStructure.csp
-
 ADD ./html/LandingPage.png $ISC_PACKAGE_INSTALLDIR/csp/user
 ADD ./html/image-map-resizer/js/imageMapResizer.min.js $ISC_PACKAGE_INSTALLDIR/csp/user/
 ADD ./html/image-map-resizer/js/imageMapResizer.map $ISC_PACKAGE_INSTALLDIR/csp/user/
