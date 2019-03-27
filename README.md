@@ -30,7 +30,7 @@ docker run -it --rm -p 52773:52773 --name iris intersystemsdc/irisdemo-demo-appo
 
 Then open the demo landing page on http://localhost:52773/csp/user/demo.csp.
 
-Use the username *SuperUser* and the password *SYS*. This is just a demo that is running on your machine, so we are using a default password.
+Use the username **SuperUser** and the password **SYS**. This is just a demo that is running on your machine, so we are using a default password.
 
 If you want to experience on building parts of the demo, start this other container:
 
