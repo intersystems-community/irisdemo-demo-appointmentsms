@@ -6,7 +6,7 @@ This demo shows how easy it is to integrate an Electronic Medical Record system 
 
 The picture bellow shows the workflow:
 
-![Demo Landing Page](README.png)
+![Demo Landing Page](https://github.com/intersystems-community/irisdemo-demo-appointmentsms/blob/master/README.png)
 
 You will find two YouTube videos bellow. The first one will spend 5min showing you the demo. But if you really and to experience building an integration with IRIS, you should watch the first and then the second.
 
