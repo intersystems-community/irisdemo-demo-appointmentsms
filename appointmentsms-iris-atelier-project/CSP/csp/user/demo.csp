@@ -103,7 +103,7 @@
 		
 		function openCubeAnalyzer()
 		{
-			window_open('http://' + ip + ':52773/csp/user/_DeepSee.UI.Analyzer.zen?$NAMESPACE=USER&IRISUserName=SuperUser&IRISPassword=SYS');
+			window_open('http://' + ip + ':52773/csp/user/_DeepSee.UI.Analyzer.zen?$NAMESPACE=USER&CUBE=Appointment.cube&IRISUserName=SuperUser&IRISPassword=SYS');
 		}
 		
 		function openDashboard()
