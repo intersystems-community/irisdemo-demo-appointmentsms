@@ -6,7 +6,7 @@ This demo shows how easy it is to integrate an Electronic Medical Record system 
 
 The picture bellow shows the workflow:
 
-![Demo Landing Page](README.png?raw=true)
+![Demo Landing Page](https://user-images.githubusercontent.com/6372644/55177991-e7d65280-515a-11e9-9a7a-114fc360704d.png)
 
 You will find two YouTube videos bellow. The first one will spend 5min showing you the demo. But if you really and to experience building an integration with IRIS, you should watch the first and then the second.
 
