@@ -14,13 +14,13 @@ Have fun! :)
 
 ## Just watch it
 
-Watch [this video](http://www.youtube.com/) on YouTube to see the demo.
+If you haven't seen [this video]( https://youtu.be/n3oiejqMNuc) on YouTube yet, start with it. 
 
 ## Build it yourself!
 
-Now that you have watched the demo. You can do two different things:
-- You can run the demo on your onw PC
-- You can experience building parts of the demo yourself!
+Now that you have watched the demo, you can use [this next video - SOON!](http://www.youtube.com/) and take two different paths:
+- Use the video to run the demo on your PC with your AWS account. Don't worry, the video helps you to set it up and AWS has a free tier for sending SMS messages!
+- Use the video to build parts of your demo yourself!
 
 To just run the demo on your PC, make sure you have docker installed on your machine and run the following command:
 
@@ -32,12 +32,14 @@ Then open the demo landing page on http://localhost:52773/csp/user/demo.csp.
 
 Use the username **SuperUser** and the password **SYS**. This is just a demo that is running on your machine, so we are using a default password.
 
-If you want to experience on building parts of the demo, start this other container:
+If you want to experience on building parts of the demo, start this other container instead:
 
 ```bash
 docker run -it --rm -p 52773:52773 --name iris intersystemsdc/irisdemo-demo-appointmentsms:student
 ```
 
-Follow [this video](http://www.youtube.com/) for guidance on both paths.
+This container has many componentes of the demo missing, so you will have to build and add them yourself! A lot of fun!
+
+Independently of the path you choose, don't forget to follow [this video - SOON](http://www.youtube.com/) for guidance.
 
 Enjoy!
