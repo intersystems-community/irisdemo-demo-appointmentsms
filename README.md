@@ -14,11 +14,11 @@ Have fun! :)
 
 ## Just watch it
 
-If you haven't seen [this video]( https://youtu.be/n3oiejqMNuc) on YouTube yet, start with it. 
+If you haven't seen [this video](https://youtu.be/04msxC1F-hs) on YouTube yet, start with it. 
 
 ## Build it yourself!
 
-Now that you have watched the demo, you can use [this next video - SOON!](http://www.youtube.com/) and take two different paths:
+Now that you have watched the demo, you can use [this next video](https://youtu.be/lp5iNE6WUhc) and take two different paths:
 - Use the video to run the demo on your PC with your AWS account. Don't worry, the video helps you to set it up and AWS has a free tier for sending SMS messages!
 - Use the video to build parts of your demo yourself!
 
@@ -40,6 +40,6 @@ docker run -it --rm -p 52773:52773 --name iris intersystemsdc/irisdemo-demo-appo
 
 This container has many componentes of the demo missing, so you will have to build and add them yourself! A lot of fun!
 
-Independently of the path you choose, don't forget to follow [this video - SOON](http://www.youtube.com/) for guidance.
+Independently of the path you choose, don't forget to follow [this video](https://youtu.be/lp5iNE6WUhc) for guidance.
 
 Enjoy!
