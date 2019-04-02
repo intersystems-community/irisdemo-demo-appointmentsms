@@ -114,7 +114,16 @@
 		function openDTL()
 		{
 			window_open('http://' + ip + ':52773/csp/user/EnsPortal.DTLEditor.zen?DT=IRISDemo.DTL.HL7ToSMSTransformer.dtl&IRISUserName=SuperUser&IRISPassword=SYS');
+		}
 		
+		function openDemo1()
+		{
+			window_open('https://youtu.be/04msxC1F-hs');
+		}
+		
+		function openDemo2()
+		{
+			window_open('https://youtu.be/lp5iNE6WUhc');
 		}
 
 		function openInstructions()
@@ -167,8 +176,8 @@
 		    <area target="" alt="Architect" title="Architect" href="javascript:openCubeArchitect()" coords="1024,722,876,693" shape="rect">
 		    <area target="" alt="Analyzer" title="Analyzer" href="javascript:openCubeAnalyzer()" coords="1022,761,876,730" shape="rect">
 		    <area target="" alt="Dashboard" title="Dashboard" href="javascript:openDashboard()" coords="1022,798,874,767" shape="rect">
-		    <area target="" alt="Demo1 Video" title="Demo1 Video" href="javascript:openAWSDeveloperAppsPage()" coords="75,40,573,115" shape="rect">
-		    <area target="" alt="Demo2 Video" title="Demo2 Video" href="javascript:openAWSDeveloperAppsPage()" coords="988,43,1588,115" shape="rect">
+		    <area target="" alt="Demo1 Video" title="Demo1 Video" href="javascript:openDemo1()" coords="75,40,573,115" shape="rect">
+		    <area target="" alt="Demo2 Video" title="Demo2 Video" href="javascript:openDemo2()" coords="988,43,1588,115" shape="rect">
 		    <area target="" alt="Amazon Web Services" title="Amazon Web Services" href="javascript:openAWSDeveloperAppsPage()" coords="1158,325,1461,462" shape="rect">
 		</map>
 		
@@ -177,7 +186,6 @@
 				<td><input ID="BTNALL" type="button" class="Button" value="Start Demo" onclick="openWindows()"/></td>
 				<td><input type="button" class="Button" value="AWS Applications Page" onclick="openAWSDeveloperAppsPage()"/></td>
 				<td><input type="button" class="Button" value="Configure AWS Credentials" onclick="openAWSCredentials()"/></td>
-				<td><input type="button" class="Button" value="Show Instructions" onclick="openInstructions()" id="instructionsbtn"/></td>
 			</tr>
 		</table>
 
@@ -191,24 +199,5 @@
 
 			imageMapResize();
 		</script>
-
-			<div id="instructions" hidden="true">
-			
-			<p>
-			To run this demo you must have an AWS Developer account and an IAM user configured with access to Amazon Simple Notification Service. 
-			The application will provide you with your <b>Access Key & Secret Access Key</b> credentials.</p>
-			
-			<p>Start the process of getting the developer account visit
-
-			<a href="https://portal.aws.amazon.com/billing/signup#/start">AWS Developer Account Singup</a>
-
-			<p>Now that you have your Twitter credentials, click on <b>Start Demo</b>. Many tabs will be opened for you. If that doesn't happen or
-			just a single tab has been opened, check to see if your browser has blocked your popups.
-			If it has, tell it to allow popups and close any tab that has been opened before trying clickin on the <b>Start Demo</b>
-			button again.</p>
-
-		</div>
-
-
 	</body>
 </html>
