@@ -43,3 +43,7 @@ In this container, many componentes of the demo are missing, so you get to build
 Independently of the path you choose, don't forget to follow [the second video](https://youtu.be/lp5iNE6WUhc) for guidance.
 
 Enjoy!
+
+# Report any Issues
+
+Please, report any issues on the [Issues section](https://github.com/intersystems-community/irisdemo-demo-appointmentsms/issues).
