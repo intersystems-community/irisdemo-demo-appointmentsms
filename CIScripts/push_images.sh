@@ -17,7 +17,6 @@ printfY "\n\nBuilding student demo image...\n"
 docker build --build-arg IRIS_PROJECT_FOLDER_NAME=${IRIS_PROJECT_FOLDER_NAME} -t $TAGGED_STUDENT_IMAGE -f Dockerfile.student .
 docker build --build-arg IRIS_PROJECT_FOLDER_NAME=${IRIS_PROJECT_FOLDER_NAME} -t $STABLE_STUDENT_IMAGE -f Dockerfile.student .
 
-
 docker push $TAGGED_IMAGE
 docker push $STABLE_IMAGE
 docker push $TAGGED_STUDENT_IMAGE
