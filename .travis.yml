@@ -37,4 +37,4 @@ deploy:
 # safelist
 branches:
   only:
-    adding-travis-ci
+    - adding-travis-ci
