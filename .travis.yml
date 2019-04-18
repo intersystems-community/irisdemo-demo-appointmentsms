@@ -33,6 +33,10 @@ deploy:
   provider: script
   script:
     - bash $TRAVIS_BUILD_DIR/CIScripts/push_images.sh ${version}
+  on:
+    branches:
+      only:
+        - adding-travis-ci
 
 # safelist
 branches:
