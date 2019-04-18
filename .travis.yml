@@ -1,0 +1,40 @@
+sudo: true
+language: generic
+services:
+  - docker
+#Setting the appropriate Docker Compose version for our IRIS DEMO IMAGES
+#Setting the environment variable for ImageName so it can be used during the building of docker images.
+env:
+  global:
+    - IMAGE_NAME=intersystemsdc/irisdemo-demo-appointmentsms
+    - IRIS_PROJECT_FOLDER_NAME=appointmentsms-iris-atelier-project
+    - DOCKER_COMPOSE_VERSION=2.4
+
+#Installing Docker Compose
+before_install:
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+
+#Configuring docker and git so our changes can be deployed to DockerHub and tags can be pushed to our repo
+before_script:
+  - bash $TRAVIS_BUILD_DIR/CIScripts/setup_git.sh
+  - docker login -u ${DOCKER_HUB_USERNAME} -p ${DOCKER_HUB_PASSWORD}
+
+script:
+  - version="$(bash $TRAVIS_BUILD_DIR/CIScripts/bump_version.sh)"
+  - echo ${version}
+
+after_success:
+  - git push origin --tags
+
+deploy:
+  provider: script
+  script:
+    - bash $TRAVIS_BUILD_DIR/CIScripts/push_images.sh ${version}
+
+# safelist
+branches:
+  only:
+    adding-travis-ci
