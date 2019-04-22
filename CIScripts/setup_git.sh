@@ -9,6 +9,7 @@ setup_git() {
   git config --global push.default matching
   # Get the credentials from a file
   git config credential.helper "store --file=.git/credentials"
+
   # This associates the API Key with the account
   echo "https://${GITHUBTOKEN}:@github.com" > .git/credentials
 }
