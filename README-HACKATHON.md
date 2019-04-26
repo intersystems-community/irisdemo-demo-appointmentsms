@@ -17,7 +17,7 @@ Have fun! :)
 
 Start with [this video](https://youtu.be/04msxC1F-hs) demo on YouTube (if you haven't already watched it).
 
-## Build it yourself!
+## Run and Build it yourself!
 
 Now that you have watched the demo, you can watch [this second video](https://youtu.be/lp5iNE6WUhc) and take two different paths:
 - Use the video to run the demo on your PC with your AWS account. Don't worry, the video guides you through set up and AWS has a free tier for sending text messages!
@@ -26,7 +26,7 @@ Now that you have watched the demo, you can watch [this second video](https://yo
 To just run the demo on your PC, make sure you have Docker installed on your machine and run the following command:
 
 ```bash
-docker run -it --rm -p 52773:52773 --name iris intersystemsdc/mithackathon2019:v1.0.full
+docker run -it --rm -p 51773:51773 -p 52773:52773 -p 1883:1883 --name iris intersystemsdc/mithackathon2019:v1.0.full
 ```
 
 Then open the demo landing page on [http://localhost:52773/csp/user/demo.csp](http://localhost:52773/csp/user/demo.csp).
@@ -36,7 +36,7 @@ Use the username **SuperUser** and the password **SYS**. This is just a demo tha
 If you want to experience on building parts of the demo, start this other container instead:
 
 ```bash
-docker run -it --rm -p 52773:52773 --name iris intersystemsdc/mithackathon2019:v1.0.exercise
+docker run -it --rm -p 51773:51773 -p 52773:52773 -p 1883:1883 --name iris intersystemsdc/mithackathon2019:v1.0.exercise
 ```
 
 In this container, many componentes of the demo are missing, so you get to build and add them yourself.
@@ -45,6 +45,9 @@ Independently of the path you choose, don't forget to follow [the second video](
 
 Enjoy!
 
-# Report any Issues
+# Ports Exposed
 
-Please, report any issues on the [Issues section](https://github.com/intersystems-community/irisdemo-demo-appointmentsms/issues).
+The following ports are being exposed by the docker run command above:
+- 52773: InterSystems IRIS Web Server Port
+- 51773: InterSystems IRIS Super Server Port
+- 1883: Mosquitto MQTT Broker"
