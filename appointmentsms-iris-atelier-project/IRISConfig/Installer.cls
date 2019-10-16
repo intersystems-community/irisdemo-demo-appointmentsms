@@ -10,7 +10,7 @@ ClassMethod LoadCSPPageToFixEMRSimulatorLink(pNamespace As %String) As %Status
 	{
 		ZN pNamespace
 		
-		Set tSC = $System.CSP.LoadPage("/csp/user/HL7/HL7SchemaDocumentStructure.csp")
+		Set tSC = $System.CSP.LoadPage("/csp/appint/HL7/HL7SchemaDocumentStructure.csp")
 	}
 	Catch (oException)
 	{

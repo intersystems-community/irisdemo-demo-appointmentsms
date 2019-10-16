@@ -22,8 +22,8 @@
 			/*
 			A timeout between each opened tab is necessary for Safari.
 			Otherwise, Safari will simply open all windows on a single tab.
-			With the timeout, Safari will first block the popups. Once the user tells
-			safari that it should allow popups, the user should be able to try opening all
+			With the timeout, Safari will first block the popups. Once the APPINT tells
+			safari that it should allow popups, the APPINT should be able to try opening all
 			windows again and all the tabs will be opened, one every second, on a new tab.
 			*/
 			
@@ -58,32 +58,32 @@
 
 		function openProduction()
 		{
-			window_open('EnsPortal.ProductionConfig.zen?$NAMESPACE=USER&IRISUserName=SuperUser&IRISPassword=SYS');
+			window_open('EnsPortal.ProductionConfig.zen?$NAMESPACE=APPINT&IRISUserName=SuperUser&IRISPassword=sys');
 		}
 
 		/*function openBusinessProcess()
 		{
-			window_open('EnsPortal.BPLEditor.zen?NAMESPACE=USER&BP=IRISDemo.BP.EvaluateTweet.Process.bpl&IRISUserName=SuperUser&IRISPassword=SYS')
+			window_open('EnsPortal.BPLEditor.zen?NAMESPACE=APPINT&BP=IRISDemo.BP.EvaluateTweet.Process.bpl&IRISUserName=SuperUser&IRISPassword=sys')
 		}*/
 
 		function openMessageTrace()
 		{
-			window_open('EnsPortal.MessageViewer.zen?$NAMESPACE=USER&IRISUserName=SuperUser&IRISPassword=SYS')
+			window_open('EnsPortal.MessageViewer.zen?$NAMESPACE=APPINT&IRISUserName=SuperUser&IRISPassword=sys')
 		}
 
 		function openEMRUI()
 		{
-			window_open('http://' + ip + ':52773/csp/user/emrsimulator.csp?')
+			window_open('http://' + ip + ':52773/csp/appint/emrsimulator.csp?')
 		}
 		
 		function openSQLExplorer()
 		{
-			window_open('http://' + ip + ':52773/csp/sys/exp/%25CSP.UI.Portal.SQL.Home.zen?$NAMESPACE=USER&$NAMESPACE=USER&IRISUserName=SuperUser&IRISPassword=SYS')
+			window_open('http://' + ip + ':52773/csp/sys/exp/%25CSP.UI.Portal.SQL.Home.zen?$NAMESPACE=APPINT&$NAMESPACE=APPINT&IRISUserName=SuperUser&IRISPassword=sys')
 		}
 
 		function openAWSCredentials()
 		{
-			window_open('EnsPortal.Credentials.zen?$NAMESPACE=USER&$NAMESPACE=APPINT&IRISUserName=SuperUser&IRISPassword=SYS');
+			window_open('EnsPortal.Credentials.zen?$NAMESPACE=APPINT&$NAMESPACE=APPINT&IRISUserName=SuperUser&IRISPassword=sys');
 		}
 
 		function openAWSDeveloperAppsPage()
@@ -93,27 +93,27 @@
 
 		function openBusinessRule()
 		{
-			window_open('http://' + ip + ':52773/csp/user/EnsPortal.RuleEditor.zen?RULE=IRISDemo.EMRHL7FeedRoutingRule&$NAMESPACE=USER&IRISUserName=SuperUser&IRISPassword=SYS');
+			window_open('http://' + ip + ':52773/csp/appint/EnsPortal.RuleEditor.zen?RULE=IRISDemo.EMRHL7FeedRoutingRule&$NAMESPACE=APPINT&IRISUserName=SuperUser&IRISPassword=sys');
 		}
 		
 		function openCubeArchitect()
 		{
-			window_open('http://' + ip + ':52773/csp/user/_DeepSee.UI.Architect.zen?$NAMESPACE=USER&CUBE=Appointment.cube&IRISUserName=SuperUser&IRISPassword=SYS');
+			window_open('http://' + ip + ':52773/csp/appint/_DeepSee.UI.Architect.zen?$NAMESPACE=APPINT&CUBE=Appointment.cube&IRISUserName=SuperUser&IRISPassword=sys');
 		}
 		
 		function openCubeAnalyzer()
 		{
-			window_open('http://' + ip + ':52773/csp/user/_DeepSee.UI.Analyzer.zen?$NAMESPACE=USER&CUBE=Appointment.cube&IRISUserName=SuperUser&IRISPassword=SYS');
+			window_open('http://' + ip + ':52773/csp/appint/_DeepSee.UI.Analyzer.zen?$NAMESPACE=APPINT&CUBE=Appointment.cube&IRISUserName=SuperUser&IRISPassword=sys');
 		}
 		
 		function openDashboard()
 		{
-			window_open('http://' + ip + ':52773/csp/user/_DeepSee.UserPortal.DashboardViewer.zen?DASHBOARD=Dashboards/Appointments.dashboard&IRISUserName=SuperUser&IRISPassword=SYS');
+			window_open('http://' + ip + ':52773/csp/appint/_DeepSee.UserPortal.DashboardViewer.zen?DASHBOARD=Dashboards/Appointments.dashboard&IRISUserName=SuperUser&IRISPassword=sys');
 		}
 		
 		function openDTL()
 		{
-			window_open('http://' + ip + ':52773/csp/user/EnsPortal.DTLEditor.zen?DT=IRISDemo.DTL.HL7ToSMSTransformer.dtl&IRISUserName=SuperUser&IRISPassword=SYS');
+			window_open('http://' + ip + ':52773/csp/appint/EnsPortal.DTLEditor.zen?DT=IRISDemo.DTL.HL7ToSMSTransformer.dtl&IRISUserName=SuperUser&IRISPassword=sys');
 		}
 		
 		function openDemo1()

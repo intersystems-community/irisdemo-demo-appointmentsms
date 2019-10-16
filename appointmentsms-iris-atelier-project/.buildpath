@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <buildpath>
 	<buildpathentry kind="src" path=""/>
-	<buildpathentry kind="con" path="com.intersystems.atelier.core.SERVER_CONTAINER/iris-appointment-demo/USER"/>
+	<buildpathentry kind="con" path="com.intersystems.atelier.core.SERVER_CONTAINER/HL7-SMS-Demo/USER"/>
 </buildpath>

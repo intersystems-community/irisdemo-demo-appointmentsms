@@ -27,7 +27,7 @@ XData ProductionDefinition
   </Item>
   <Item Name="EMR HL7 Appointment Store Operation" Category="" ClassName="IRISDemo.BO.Appointment.Operation" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="false" Schedule="">
   </Item>
-</Production>
+</Production> 
 }
 
 }

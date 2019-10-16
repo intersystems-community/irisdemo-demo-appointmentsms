@@ -1,8 +1,8 @@
 #!/bin/bash
 source util.sh
 
-IMAGE_NAME=intersystemsdc/irisdemo-demo-appointmentsms:stable
-STUDENT_IMAGE_NAME=intersystemsdc/irisdemo-demo-appointmentsms:student
+IMAGE_NAME=intersystemsdc/irisdemo-demo-appointmentsms:latest
+STUDENT_IMAGE_NAME=intersystemsdc/irisdemo-demo-appointmentsms:latest-student
 IRIS_PROJECT_FOLDER_NAME=appointmentsms-iris-atelier-project
 
 printfY "\nBuilding full demo image...\n"
