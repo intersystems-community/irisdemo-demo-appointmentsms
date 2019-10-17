@@ -28,7 +28,7 @@ To just run the demo on your PC, make sure you have Docker installed on your mac
 docker run -it --rm -p 52773:52773 --name iris intersystemsdc/irisdemo-demo-appointmentsms:latest
 ```
 
-Then open the demo landing page on [http://localhost:52773/csp/user/demo.csp](http://localhost:52773/csp/user/demo.csp).
+Then open the demo landing page on [http://localhost:52773/csp/appint/demo.csp](http://localhost:52773/csp/appint/demo.csp).
 
 Use the username **SuperUser** and the password **sys**. This is just a demo that is running on your machine, so we are using a default password.
 
