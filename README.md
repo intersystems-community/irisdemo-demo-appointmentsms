@@ -16,7 +16,7 @@ Have fun! :)
 
 Start with [this video](https://youtu.be/04msxC1F-hs) demo on YouTube (if you haven't already watched it).
 
-**WARNING:** A previous version of this demo used the namespace "USER". Now it is running on the namespace "APPINT". So, when watching the video, when you see "USER", please use "APPINT" instead.*
+**WARNING:** A previous version of this demo used the namespace "USER". Now it is running on the namespace "APPINT". So, when watching the video, when you see "USER", please use "APPINT" instead.
 
 ## Build it yourself!
 
