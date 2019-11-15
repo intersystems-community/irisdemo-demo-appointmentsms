@@ -1,11 +1,8 @@
-FROM intersystemsdc/irisdemo-base-irishealthint-community:version-1.6.1
+FROM intersystemsdc/irisdemo-base-irishealthint-community:version-1.6.3
 LABEL maintainer="Amir Samary <amir.samary@intersystems.com>"
 
 # Name of the project folder ex.: my-atelier-project
 ARG IRIS_PROJECT_FOLDER_NAME=appointmentsms-iris-atelier-project
-
-# Adding source code that will be loaded by the installer
-ADD --chown=irisowner:irisuser ./${IRIS_PROJECT_FOLDER_NAME}/ $IRIS_APP_SOURCEDIR
 
 # To create a directory on the root file system, we need to be temporarily root:
 USER root
@@ -25,6 +22,9 @@ ADD ./html/image-map-resizer/js/imageMapResizer.min.js $ISC_PACKAGE_INSTALLDIR/c
 ADD ./html/image-map-resizer/js/imageMapResizer.map $ISC_PACKAGE_INSTALLDIR/csp/appint/
 
 ADD ./template_hl7_message.txt /EMRHL7Feed
+
+# Adding source code that will be loaded by the installer
+ADD --chown=irisowner:irisuser ./${IRIS_PROJECT_FOLDER_NAME}/ $IRIS_APP_SOURCEDIR
 
 # Running the installer. This will load the source from our project.
 RUN $ISC_PACKAGE_INSTALLDIR/demo/irisdemoinstaller.sh
