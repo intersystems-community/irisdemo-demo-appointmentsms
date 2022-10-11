@@ -3,7 +3,7 @@ Include %occInclude
 Class IRISConfig.Installer Extends IRISConfig.InstallerBase
 {
 
-ClassMethod LoadCSPPageToFixEMRSimulatorLink(pNamespace As %String) As %Status
+ClassMethod LoadOurCSPPages(pNamespace As %String) As %Status
 {
 	Set tSC = $$$OK
 	Try
@@ -11,6 +11,8 @@ ClassMethod LoadCSPPageToFixEMRSimulatorLink(pNamespace As %String) As %Status
 		ZN pNamespace
 		
 		Set tSC = $System.CSP.LoadPage("/csp/appint/HL7/HL7SchemaDocumentStructure.csp")
+		Set tSC = $System.CSP.LoadPage("/csp/appint/demo.csp")
+		Set tSC = $System.CSP.LoadPage("/csp/appint/emrsimulator.csp")
 	}
 	Catch (oException)
 	{
@@ -19,7 +21,7 @@ ClassMethod LoadCSPPageToFixEMRSimulatorLink(pNamespace As %String) As %Status
 	
 	ZN "%SYS"
 	
-	Quit tSC 
+	Quit tSC
 }
 
 ClassMethod LoadTransactionalData(pNamespace As %String) As %Status
@@ -38,7 +40,7 @@ ClassMethod LoadTransactionalData(pNamespace As %String) As %Status
 	
 	ZN "%SYS"
 	
-	Quit tSC 
+	Quit tSC
 }
 
 /// This method will create an Interoperability credential meant to be used on Interoperability Productions.
@@ -61,7 +63,7 @@ ClassMethod CreateCredentials(pNamespace As %String) As %Status
 	
 	ZN tNS
 	
-	Quit tSC 
+	Quit tSC
 }
 
 /// You can customize this to run code during docker build
@@ -87,10 +89,11 @@ XData Install [ XMLNamespace = INSTALLER ]
 	</Invoke>
 
 	<Log Text="Loading CSP page we use to fix link on HL7 Output on the EMR Simulator..." Level="0"/>
-	<Invoke Class="IRISConfig.Installer" Method="LoadCSPPageToFixEMRSimulatorLink" CheckStatus="true">
+	<Invoke Class="IRISConfig.Installer" Method="LoadOurCSPPages" CheckStatus="true">
 		<Arg name="pNamespace" Value="${Namespace}"/>
 	</Invoke>
 	
 </Manifest>
 }
+
 }

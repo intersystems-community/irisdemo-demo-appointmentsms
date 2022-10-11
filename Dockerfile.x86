@@ -1,4 +1,4 @@
-FROM vineethrajesh300/irisdemo-base-irishealthint-community-arm
+FROM vineethrajesh300/irisdemo-base-irishealthint-community-x86
 LABEL maintainer="Amir Samary <amir.samary@intersystems.com>"
 
 # Name of the project folder ex.: my-atelier-project
@@ -20,9 +20,6 @@ ADD ./html/HL7SchemaDocumentStructure.csp $ISC_PACKAGE_INSTALLDIR/csp/appint/HL7
 ADD ./html/LandingPage.png $ISC_PACKAGE_INSTALLDIR/csp/appint
 ADD ./html/image-map-resizer/js/imageMapResizer.min.js $ISC_PACKAGE_INSTALLDIR/csp/appint/
 ADD ./html/image-map-resizer/js/imageMapResizer.map $ISC_PACKAGE_INSTALLDIR/csp/appint/
-ADD ./${IRIS_PROJECT_FOLDER_NAME}/CSP/csp/appint/*.csp $ISC_PACKAGE_INSTALLDIR/csp/appint/
-
-
 
 ADD ./template_hl7_message.txt /EMRHL7Feed
 

@@ -22,8 +22,6 @@ ADD ./html/image-map-resizer/js/imageMapResizer.min.js $ISC_PACKAGE_INSTALLDIR/c
 ADD ./html/image-map-resizer/js/imageMapResizer.map $ISC_PACKAGE_INSTALLDIR/csp/appint/
 ADD ./${IRIS_PROJECT_FOLDER_NAME}/CSP/csp/appint/*.csp $ISC_PACKAGE_INSTALLDIR/csp/appint/
 
-
-
 ADD ./template_hl7_message.txt /EMRHL7Feed
 
 # Adding source code that will be loaded by the installer

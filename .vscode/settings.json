@@ -1,0 +1,8 @@
+{
+    "workbench.colorTheme": "InterSystems Default Dark",
+    "objectscript.conn": {
+        "server": "iris-appointment-demo",
+        "ns": "USER",
+        "active": true
+    }
+}
