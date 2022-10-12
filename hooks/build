@@ -13,5 +13,8 @@ echo "   DOCKER_TAG     : $DOCKER_TAG"
 echo "   DOCKER_TAG     : $IMAGE_NAME"
 
 echo
-docker build -t ${DOCKER_REPO}:${DOCKER_TAG} .
-docker build -t ${DOCKER_REPO}:student-${DOCKER_TAG} -f Dockerfile.student .
+docker buildx build --platform linux/amd64 -f ./Dockerfile.x86 -t ${DOCKER_REPO}:${DOCKER_TAG} .
+docker buildx build  --platform linux/amd64 -f ./Dockerfile.x86 -t ${DOCKER_REPO}:student-${DOCKER_TAG} -f Dockerfile.student .
+
+docker buildx build --platform linux/arm64 -f ./Dockerfile.ARM -t ${DOCKER_REPO}:arm-${DOCKER_TAG} .
+docker buildx build --platform linux/arm64 -f ./Dockerfile.ARM  -t ${DOCKER_REPO}:arm-student-${DOCKER_TAG} -f Dockerfile.student .

@@ -11,7 +11,9 @@ ClassMethod LoadOurCSPPages(pNamespace As %String) As %Status
 		ZN pNamespace
 		
 		Set tSC = $System.CSP.LoadPage("/csp/appint/HL7/HL7SchemaDocumentStructure.csp")
+		quit:$$$ISERR(tSC)
 		Set tSC = $System.CSP.LoadPage("/csp/appint/demo.csp")
+		quit:$$$ISERR(tSC)
 		Set tSC = $System.CSP.LoadPage("/csp/appint/emrsimulator.csp")
 	}
 	Catch (oException)
