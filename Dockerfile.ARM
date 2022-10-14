@@ -27,4 +27,5 @@ ADD ./template_hl7_message.txt /EMRHL7Feed
 # Adding source code that will be loaded by the installer
 ADD --chown=irisowner:irisowner ./${IRIS_PROJECT_FOLDER_NAME}/ $IRIS_APP_SOURCEDIR
 
-# Running the installer. This will load the source from our project.RUN /demo/irisdemoinstaller.sh
+# Running the installer. This will load the source from our project.
+RUN /demo/irisdemoinstaller.sh
