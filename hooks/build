@@ -13,8 +13,10 @@ echo "   DOCKER_TAG     : $DOCKER_TAG"
 echo "   DOCKER_TAG     : $IMAGE_NAME"
 
 echo
-docker buildx build --platform linux/amd64 -f ./Dockerfile.x86 -t ${DOCKER_REPO}:${DOCKER_TAG} .
-docker buildx build  --platform linux/amd64 -f ./Dockerfile.x86 -t ${DOCKER_REPO}:student-${DOCKER_TAG} -f Dockerfile.student .
+docker buildx build  --platform linux/amd64 -f ./amd64.dockerfile -t ${DOCKER_REPO}:amd64-${DOCKER_TAG} .
+docker buildx build  --platform linux/amd64 -f ./amd64.dockerfile -t ${DOCKER_REPO}:amd64-latest .
+docker buildx build  --platform linux/amd64 -f ./amd64.student.dockerfile -t ${DOCKER_REPO}:amd64-student-${DOCKER_TAG} .
 
-docker buildx build --platform linux/arm64 -f ./Dockerfile.ARM -t ${DOCKER_REPO}:arm-${DOCKER_TAG} .
-docker buildx build --platform linux/arm64 -f ./Dockerfile.ARM  -t ${DOCKER_REPO}:arm-student-${DOCKER_TAG} -f Dockerfile.student .
+docker buildx build --platform linux/arm64 -f ./arm64.dockerfile -t ${DOCKER_REPO}:arm64-${DOCKER_TAG} .
+docker buildx build --platform linux/arm64 -f ./arm64.dockerfile -t ${DOCKER_REPO}:arm64-latest .
+docker buildx build --platform linux/arm64 -f ./arm64.student.dockerfile  -t ${DOCKER_REPO}:arm64-student-${DOCKER_TAG} .

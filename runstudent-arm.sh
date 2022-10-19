@@ -13,6 +13,6 @@ printf "\n\t InterSystems IRIS Super Server Port is on 51773.\n\n"
 docker run --init -it --rm \
     -p 51773:51773 -p 52773:52773 \
     --name appointmentsms-student \
-    ${DOCKER_REPO}:student-version-${VERSION}
+    ${DOCKER_REPO}:arm64-student-version-${VERSION}
 
 printf "\nExited container\n"
