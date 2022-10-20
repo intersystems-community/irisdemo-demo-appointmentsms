@@ -1,4 +1,4 @@
-Class IRISDemo.EmptyProduction Extends IRISDemo.BaseProduction
+Class IRISDemo.Production Extends IRISDemo.BaseProduction
 {
 
 XData ProductionDefinition
