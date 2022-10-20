@@ -1,7 +1,6 @@
-## 1.2.2 (October 20, 2022)
+## 1.2.3 (October 20, 2022)
   - Adding docker buildx use default to build scripts
-  - .
-  - Deleting garbage files
+  - Fixing Dockerfile for ARM so that Docker Hub autobuild works
 
 ## 1.2.1 (October 20, 2022)
   - Bumping IRIS version to 2022.1.0.209.0-zpm
