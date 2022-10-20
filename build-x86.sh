@@ -5,6 +5,8 @@ set -e
 DOCKER_REPO=intersystemsdc/irisdemo-demo-appointmentsms
 VERSION=`cat ./VERSION`
 
+docker buildx use default
+
 docker buildx build --platform linux/amd64 -f ./amd64.dockerfile -t ${DOCKER_REPO}:amd64-version-${VERSION} .
 docker tag ${DOCKER_REPO}:amd64-version-${VERSION} ${DOCKER_REPO}:amd64-latest
 
