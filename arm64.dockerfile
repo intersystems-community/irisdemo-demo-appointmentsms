@@ -1,4 +1,4 @@
-FROM intersystemsdc/irisdemo-base-irishealthint-community:arm64-version-1.11.6
+FROM intersystemsdc/irisdemo-base-irishealthint-community:arm64-version-1.11.7
 LABEL maintainer="Amir Samary <amir.samary@intersystems.com>"
 
 # Name of the project folder ex.: my-atelier-project
