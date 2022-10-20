@@ -29,7 +29,5 @@ ADD --chown=irisowner:irisowner ./${IRIS_PROJECT_FOLDER_NAME}/ $IRIS_APP_SOURCED
 # Going back to irisowner now
 USER irisowner
 
-SHELL ["/bin/bash", "-c"]
-
 # Running the installer. This will load the source from our project.
 RUN /demo/irisdemoinstaller.sh

@@ -30,6 +30,5 @@ RUN rm $IRIS_APP_SOURCEDIR/IRISDemo/EMRHL7FeedRoutingRule.cls
 ADD --chown=irisowner:irisowner ./student/EmptyProduction.cls $IRIS_APP_SOURCEDIR/IRISDemo/Production.cls
 ADD --chown=irisowner:irisowner ./student/AppointmentOperation.cls $IRIS_APP_SOURCEDIR/IRISDemo/BO/Appointment/Operation.cls
 
-SHELL ["/bin/bash", "-c"]
 # Running the installer. This will load the source from our project.
 RUN /demo/irisdemoinstaller.sh

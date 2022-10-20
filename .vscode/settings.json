@@ -3,6 +3,6 @@
     "objectscript.conn": {
         "server": "iris-appointment-demo",
         "ns": "USER",
-        "active": true
+        "active": false
     }
 }
